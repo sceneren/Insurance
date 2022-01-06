@@ -1,0 +1,562 @@
+{
+	"compiler": {
+		"version": "0.8.7+commit.e28d00a7"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_feePercent",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_insureOrderPrice",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "previousOwner",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "newOwner",
+						"type": "address"
+					}
+				],
+				"name": "OwnershipTransferred",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "_dydxId",
+						"type": "string"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "insureOrderId",
+						"type": "uint256"
+					}
+				],
+				"name": "PayPremiumSuccessEvent",
+				"type": "event"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "tokenType",
+						"type": "string"
+					},
+					{
+						"internalType": "address",
+						"name": "_insureAddress",
+						"type": "address"
+					},
+					{
+						"internalType": "string",
+						"name": "_dydxOrderId",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_burstPrice",
+						"type": "uint256"
+					}
+				],
+				"name": "addInsureOrder",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_insureOrderId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "_dydxOrderId",
+						"type": "string"
+					}
+				],
+				"name": "agreeInsureOrder",
+				"outputs": [],
+				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "_tokenType",
+						"type": "string"
+					},
+					{
+						"internalType": "bool",
+						"name": "allow",
+						"type": "bool"
+					}
+				],
+				"name": "changeTokenTypes",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_address",
+						"type": "address"
+					}
+				],
+				"name": "getAddressBalance",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_insureAddress",
+						"type": "address"
+					}
+				],
+				"name": "getAllInsureOrders",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "uint256",
+								"name": "insureOrderId",
+								"type": "uint256"
+							},
+							{
+								"internalType": "string",
+								"name": "dydxOrderId",
+								"type": "string"
+							},
+							{
+								"internalType": "address",
+								"name": "insureAddress",
+								"type": "address"
+							},
+							{
+								"internalType": "uint256",
+								"name": "burstPrice",
+								"type": "uint256"
+							},
+							{
+								"internalType": "bool",
+								"name": "isPaied",
+								"type": "bool"
+							},
+							{
+								"internalType": "bool",
+								"name": "indemnity",
+								"type": "bool"
+							}
+						],
+						"internalType": "struct Insure.InsureOrder[]",
+						"name": "orders",
+						"type": "tuple[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_insureOrderId",
+						"type": "uint256"
+					}
+				],
+				"name": "getInsureOrderByOrderId",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "uint256",
+								"name": "insureOrderId",
+								"type": "uint256"
+							},
+							{
+								"internalType": "string",
+								"name": "dydxOrderId",
+								"type": "string"
+							},
+							{
+								"internalType": "address",
+								"name": "insureAddress",
+								"type": "address"
+							},
+							{
+								"internalType": "uint256",
+								"name": "burstPrice",
+								"type": "uint256"
+							},
+							{
+								"internalType": "bool",
+								"name": "isPaied",
+								"type": "bool"
+							},
+							{
+								"internalType": "bool",
+								"name": "indemnity",
+								"type": "bool"
+							}
+						],
+						"internalType": "struct Insure.InsureOrder",
+						"name": "",
+						"type": "tuple"
+					},
+					{
+						"internalType": "uint256",
+						"name": "index",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getOwnerInsureOrders",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "uint256",
+								"name": "insureOrderId",
+								"type": "uint256"
+							},
+							{
+								"internalType": "string",
+								"name": "dydxOrderId",
+								"type": "string"
+							},
+							{
+								"internalType": "address",
+								"name": "insureAddress",
+								"type": "address"
+							},
+							{
+								"internalType": "uint256",
+								"name": "burstPrice",
+								"type": "uint256"
+							},
+							{
+								"internalType": "bool",
+								"name": "isPaied",
+								"type": "bool"
+							},
+							{
+								"internalType": "bool",
+								"name": "indemnity",
+								"type": "bool"
+							}
+						],
+						"internalType": "struct Insure.InsureOrder[]",
+						"name": "orders",
+						"type": "tuple[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "_tokenType",
+						"type": "string"
+					}
+				],
+				"name": "getTokenTypeStatus",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_insureOrderId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "_dydxOrderId",
+						"type": "string"
+					},
+					{
+						"internalType": "bool",
+						"name": "_isBurst",
+						"type": "bool"
+					}
+				],
+				"name": "indemnity",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "owner",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_insureOrderId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "_dydxOrderId",
+						"type": "string"
+					}
+				],
+				"name": "payPremium",
+				"outputs": [],
+				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "dest",
+						"type": "address"
+					}
+				],
+				"name": "payments",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "renounceOwnership",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"name": "tokenTypes",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "newOwner",
+						"type": "address"
+					}
+				],
+				"name": "transferOwnership",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address payable",
+						"name": "payee",
+						"type": "address"
+					}
+				],
+				"name": "withdrawPayments",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {
+				"owner()": {
+					"details": "Returns the address of the current owner."
+				},
+				"payments(address)": {
+					"details": "Returns the payments owed to an address.",
+					"params": {
+						"dest": "The creditor's address."
+					}
+				},
+				"renounceOwnership()": {
+					"details": "Leaves the contract without owner. It will not be possible to call `onlyOwner` functions anymore. Can only be called by the current owner. NOTE: Renouncing ownership will leave the contract without an owner, thereby removing any functionality that is only available to the owner."
+				},
+				"transferOwnership(address)": {
+					"details": "Transfers ownership of the contract to a new account (`newOwner`). Can only be called by the current owner."
+				},
+				"withdrawPayments(address)": {
+					"details": "Withdraw accumulated payments, forwarding all gas to the recipient. Note that _any_ account can call this function, not just the `payee`. This means that contracts unaware of the `PullPayment` protocol can still receive funds this way, by having a separate account call {withdrawPayments}. WARNING: Forwarding all gas opens the door to reentrancy vulnerabilities. Make sure you trust the recipient, or are either following the checks-effects-interactions pattern or using {ReentrancyGuard}.",
+					"params": {
+						"payee": "Whose payments will be withdrawn."
+					}
+				}
+			},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {
+				"constructor": {
+					"notice": "_feePercent: 手续费百分比，0-100 _insureOrderPrice: 保费价格"
+				},
+				"indemnity(uint256,string,bool)": {
+					"notice": "_insureOrderId ：保单Id _dydxOrderId : dydx的订单Id _isBurst ：是否爆仓，true-爆仓 ，false-没有爆仓"
+				}
+			},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"Documents/solidity_workspace/Insurance/contracts/Insure.sol": "Insure"
+		},
+		"evmVersion": "london",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"@openzeppelin/contracts/access/Ownable.sol": {
+			"keccak256": "0x6bb804a310218875e89d12c053e94a13a4607cdf7cc2052f3e52bd32a0dc50a1",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://b2ebbbe6d0011175bd9e7268b83de3f9c2f9d8d4cbfbaef12aff977d7d727163",
+				"dweb:/ipfs/Qmd5c7Vxtis9wzkDNhxwc6A2QT5H9xn9kfjhx7qx44vpro"
+			]
+		},
+		"@openzeppelin/contracts/security/PullPayment.sol": {
+			"keccak256": "0x006b71a335e635f48b9ad55eab6fc34e799079225ae22b510aa370bc08e259e8",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://6bb7a9c62f5542f671e35ce5ba758213199d3773e9a3914f85d6eb68c5178468",
+				"dweb:/ipfs/Qmc28BtdaKujfnCSiwhJDUJf9DJpyeFMbbky4rpNHt9c1y"
+			]
+		},
+		"@openzeppelin/contracts/utils/Address.sol": {
+			"keccak256": "0x3336baae5cf23e94274d75336e2d412193be508504aee185e61dc7d58cd05c8a",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://39a05eec7083dfa0cc7e0cbfe6cd1bd085a340af1ede93fdff3ad047c5fb3d8e",
+				"dweb:/ipfs/QmVApz5fCUq2QC8gKTsNNdCmcedJ3ETHp68zR5N3WUKS4r"
+			]
+		},
+		"@openzeppelin/contracts/utils/Context.sol": {
+			"keccak256": "0x90565a39ae45c80f0468dc96c7b20d0afc3055f344c8203a0c9258239f350b9f",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://26e8b38a7ac8e7b4463af00cf7fff1bf48ae9875765bf4f7751e100124d0bc8c",
+				"dweb:/ipfs/QmWcsmkVr24xmmjfnBQZoemFniXjj3vwT78Cz6uqZW1Hux"
+			]
+		},
+		"@openzeppelin/contracts/utils/escrow/Escrow.sol": {
+			"keccak256": "0xaf3f0d87fb0237dc255183be425f45fc902b343494d8a083878eb615211cc789",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://271399b7a3f92a81525320ccb879999cfd58cd5ce9f7e1cc29c995fc494bd08f",
+				"dweb:/ipfs/QmNoB7sWcRJyJLwDeXttzKcxdUzZAKij4oAZUgcBAGZawj"
+			]
+		},
+		"@openzeppelin/contracts/utils/math/SafeMath.sol": {
+			"keccak256": "0x8666f020bd8fc9dc14f07e2ebc52b5f236ab4cdde7c77679b08cb2f94730043b",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://163776cbf565c722232393aa2d62cbe8a2ffb5805986abf4906c00e1e07450a6",
+				"dweb:/ipfs/QmPZoN9T3cb6o8bGhjBPZcz7im8T8DWhpr3tjLwhJJHx9N"
+			]
+		},
+		"Documents/solidity_workspace/Insurance/contracts/Insure.sol": {
+			"keccak256": "0x52b1a080d6c387878f73f45e38bc87418880445cc43205ee0537157f44c6b015",
+			"license": "GPL-3",
+			"urls": [
+				"bzz-raw://41a17e6ec2310e30c369aa47a6c123130216b58be737c53097ae3012ffa894e6",
+				"dweb:/ipfs/Qmc5zkQR1FepTEgdM2LCitAZe4VwkZTqyNcCKzPAbNi9iZ"
+			]
+		}
+	},
+	"version": 1
+}
