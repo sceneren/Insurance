@@ -32783,12 +32783,12 @@
         }
       },
       "links": {},
-      "address": "0xC59D71776B6e474740A7d9cDB6220BB3D4ce7946",
-      "transactionHash": "0x53622a11cfed4cccef7fd7c7bab649e29914a8f3a7ef64e0b3211d6541f41567"
+      "address": "0x8fB6aA9EDBf8f4eAf79d162aa313c4Aa1c7E0A5D",
+      "transactionHash": "0x7e4d6f64a4d9dd1b2a837f3196d4f3acf111c6f1deb95ac1d92c9ee9871b3ebb"
     }
   },
   "schemaVersion": "3.4.3",
-  "updatedAt": "2022-01-06T02:18:31.739Z",
+  "updatedAt": "2022-01-06T02:53:00.452Z",
   "networkType": "ethereum",
   "devdoc": {
     "kind": "dev",

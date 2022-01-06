@@ -133,25 +133,6 @@
 				"inputs": [
 					{
 						"internalType": "address",
-						"name": "_address",
-						"type": "address"
-					}
-				],
-				"name": "getAddressBalance",
-				"outputs": [
-					{
-						"internalType": "uint256",
-						"name": "",
-						"type": "uint256"
-					}
-				],
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"inputs": [
-					{
-						"internalType": "address",
 						"name": "_insureAddress",
 						"type": "address"
 					}
@@ -194,6 +175,38 @@
 						"internalType": "struct Insure.InsureOrder[]",
 						"name": "orders",
 						"type": "tuple[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_address",
+						"type": "address"
+					}
+				],
+				"name": "getBalance",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getFeePercent",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
 					}
 				],
 				"stateMutability": "view",
@@ -249,6 +262,19 @@
 					{
 						"internalType": "uint256",
 						"name": "index",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getInsureOrderPrice",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
 						"type": "uint256"
 					}
 				],
@@ -478,6 +504,12 @@
 				"constructor": {
 					"notice": "_feePercent: 手续费百分比，0-100 _insureOrderPrice: 保费价格"
 				},
+				"getFeePercent()": {
+					"notice": "获取手续费"
+				},
+				"getInsureOrderPrice()": {
+					"notice": "获取保费价格"
+				},
 				"indemnity(uint256,string,bool)": {
 					"notice": "_insureOrderId ：保单Id _dydxOrderId : dydx的订单Id _isBurst ：是否爆仓，true-爆仓 ，false-没有爆仓"
 				}
@@ -550,11 +582,11 @@
 			]
 		},
 		"Documents/solidity_workspace/Insurance/contracts/Insure.sol": {
-			"keccak256": "0x52b1a080d6c387878f73f45e38bc87418880445cc43205ee0537157f44c6b015",
-			"license": "GPL-3",
+			"keccak256": "0x7d1e3503a8986003b3cecbe4128939daa4d7dcfe1cbe09a33cf8ffa1ebff9c92",
+			"license": "MIT",
 			"urls": [
-				"bzz-raw://41a17e6ec2310e30c369aa47a6c123130216b58be737c53097ae3012ffa894e6",
-				"dweb:/ipfs/Qmc5zkQR1FepTEgdM2LCitAZe4VwkZTqyNcCKzPAbNi9iZ"
+				"bzz-raw://72a8807bfaa8adc969c432ab79b49d317c39a2620d6947835fbbad003be4169a",
+				"dweb:/ipfs/Qmf7fziKucZDkSHZBoJ178ztdkxZfwmiuZN8jqg7TgTSxU"
 			]
 		}
 	},

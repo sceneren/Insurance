@@ -68,13 +68,14 @@ contract Insure is PullPayment, Ownable {
     /**
         获取手续费
      */
-    function getFeePercent() public view returns(uint256){
+    function getFeePercent() public view returns (uint256) {
         return feePercent;
     }
+
     /**
         获取保费价格
      */
-    function getInsureOrderPrice() public view returns(uint256){
+    function getInsureOrderPrice() public view returns (uint256) {
         return insureOrderPrice;
     }
 
@@ -147,8 +148,7 @@ contract Insure is PullPayment, Ownable {
         returns (InsureOrder memory, uint256 index)
     {
         require(_insureOrderId > 0, "_insureOrderId Error");
-        (bool orderIndexResult, uint256 orderIndex) = _insureOrderId.trySub(1);
-        require(orderIndexResult, "_insureOrderId Error");
+        uint256 orderIndex = _insureOrderId.sub(1);
         return (allOrders[orderIndex], orderIndex);
     }
 
@@ -202,7 +202,6 @@ contract Insure is PullPayment, Ownable {
             "Order exception"
         );
         require(msg.value > 0, "The premium exception");
-        //require(msg.value == order.insureAmount,"The premium exception");
 
         insureOrderUsers[_insureOrderId].push(
             InsureOrderUser({
