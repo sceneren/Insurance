@@ -299,6 +299,7 @@ contract Insure is PullPayment, Ownable {
         return true;
     }
 
+    //获取余额
     function getBalance(address _address) public view returns (uint256) {
         return _address.balance;
     }

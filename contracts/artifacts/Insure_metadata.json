@@ -582,11 +582,11 @@
 			]
 		},
 		"Documents/solidity_workspace/Insurance/contracts/Insure.sol": {
-			"keccak256": "0x7d1e3503a8986003b3cecbe4128939daa4d7dcfe1cbe09a33cf8ffa1ebff9c92",
+			"keccak256": "0x65a9cfab0f05b122d6eb5f2a4c2ea43726540be4c0901b147e01a762606866aa",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://72a8807bfaa8adc969c432ab79b49d317c39a2620d6947835fbbad003be4169a",
-				"dweb:/ipfs/Qmf7fziKucZDkSHZBoJ178ztdkxZfwmiuZN8jqg7TgTSxU"
+				"bzz-raw://ed45d464144956bf2a66f7fddebc606768a2ec4eba163f620f452ac200f5ae5c",
+				"dweb:/ipfs/QmSrHanQYT3qcrF2y2pd3emn9s7rpCkfg4oJyaD3Dand8T"
 			]
 		}
 	},
